@@ -13,6 +13,18 @@ return [
     |
     */
 
+    
+    'login' => 'Login',
+    'logout' => 'Logout',
+    'name' => 'Full Names',
+    'register' => 'Register',
+    'id_number' => 'Identity/Passport Number',
+    'email_address' => 'Email Address',
+    'password' => 'Password',
+    'confirm_password' => 'Confirm Password',
+    'remember_me' => 'Remember Me',
+    'forgot_password' => 'Forgot Your Password?',
+    //
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
