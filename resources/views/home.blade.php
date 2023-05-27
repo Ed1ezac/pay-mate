@@ -14,7 +14,7 @@
                     <p>{{ $payable->organization->name }}</p>
                     <p>P{{ $payable->principal }}</p>
                     <div class="flex justify-end">
-                        <a class="px-8 py-1.5 border" href="#">Pay</a>
+                        <a class="px-8 py-1.5 border" href="{{'/pay/for/payable/id/'.$payable->id}}">Pay</a>
                     </div>
                    
                 </div>
