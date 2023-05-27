@@ -6,6 +6,7 @@
 
 require('./bootstrap');
 import { createApp } from 'vue';
+import Pay from './components/Pay.vue';
 import Navbar from './components/Navbar.vue';
 import ErrorBanner from './components/ErrorBanner.vue';
 import StatusBanner from './components/StatusBanner.vue';
@@ -16,6 +17,7 @@ import StatusBanner from './components/StatusBanner.vue';
  */
 const app = createApp({
     components:{
+       Pay,
        Navbar,
        ErrorBanner,
        StatusBanner,
