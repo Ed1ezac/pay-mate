@@ -12,6 +12,7 @@ return [
     'accrues' => 'Accrues',
     'accrues_by' => 'Accrues By',
     'add_payable' => 'Add Payable',
+    'new_payable' => 'New Payable',
     'create_payable' => 'Create Payable',
     'payable_name' => 'Payable Name',
     'payable_type' => 'Payable Type',
