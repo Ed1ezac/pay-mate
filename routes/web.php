@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PayableController;
 use App\Http\Controllers\OrganizationController;
 
@@ -16,9 +17,13 @@ use App\Http\Controllers\OrganizationController;
 |
 */
 
+Route::get('/',  function () {
+    return view('welcome');
+});
+
 Auth::routes();
 
-Route::get('/', [HomeController::class, 'welcome']);
+//Route::get('/', [HomeController::class, 'welcome']);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 ///Organizations
@@ -30,3 +35,8 @@ Route::post('/create/organization', [OrganizationController::class, 'create'])->
 Route::get('/organization/{id?}/payables', [PayableController::class, 'forOrganization']);
 Route::get('/new/payable/', [PayableController::class, 'creationForm'])->name('new_payable');
 Route::post('/create/payable', [PayableController::class, 'create'])->name('create_payable');
+//Payment
+Route::get('/pay/for/payable/id/{id?}', [PaymentController::class, 'newPayment']);
+/*Route::group(['prefix' =>'admin', 'middleware' =>'auth'], function () {
+    Route::get('/companies', [CompanyController::class, 'adminCompaniesList']);
+});*/
