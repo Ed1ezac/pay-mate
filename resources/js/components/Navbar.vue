@@ -12,7 +12,6 @@
 
             <!--Menu Toggle Button--->
             <div class="block md:hidden self-center">
-                
                 <!---Avatar---->
                 <div v-if="isAuth" class="inline-block mr-4 relative text-left">
                     <Menu>
