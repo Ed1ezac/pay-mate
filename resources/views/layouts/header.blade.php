@@ -11,15 +11,17 @@
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
-    <body class="bg-gray-50">
+    <body class="bg-gray-50 font-body">
         <div id="app">
             @guest
                 <navbar
+                    logo-uri="{{ asset('logo.png') }}"
                     current-url="{{ Request::segment(1) }}"
                     v-bind:is-auth="{{ json_encode(false) }}">
                 </navbar>               
             @else
                 <navbar
+                    logo-uri="{{ asset('logo.png') }}"
                     email="{{ Auth::user()->email }}"
                     username="{{ Auth::user()->name }}"
                     current-url="{{ Request::segment(1) }}"

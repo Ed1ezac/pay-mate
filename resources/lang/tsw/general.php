@@ -12,6 +12,7 @@ return [
     'accrues' => 'E a Oketsega',
     'accrues_by' => 'E Oketsega Ka',
     'add_payable' => 'Add Payable',//
+    'new_payment' => 'Dira Tuelo',
     'create_payable' => 'Create Payable',//
     'payable_name' => 'Leina la e Duelelwang',
     'payable_type' => 'Mofuta wa e Duelelwang',
