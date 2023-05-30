@@ -4,7 +4,7 @@
 <section>
     <h3 class="flex sm:mt-2 2xl:mt-8 text-gray-700 justify-center p-2 text-3xl font-medium mx-6">{{ __('auth.login') }}</h3>
     <div class="flex justify-center mt-4 mb-12">
-        <div class="bg-white shadow-md overflow-hidden w-full max-w-sm rounded-md">
+        <div class="bg-white shadow-md px-8 py-8 overflow-hidden w-full max-w-sm rounded-md">
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 

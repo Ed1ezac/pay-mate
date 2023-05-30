@@ -6,7 +6,12 @@ module.exports = {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        'headings':['Niramit', 'Karla', 'Mulish', 'system-ui', '-apple-system', 'ui-sans-serif'],
+        'body':['"Noto Sans"', 'Roboto', 'system-ui', '-apple-system', 'ui-sans-serif'],
+      }
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),

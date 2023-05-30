@@ -18,6 +18,7 @@ class CreatePaymentsTable extends Migration
             $table->foreignId('user_id');
             $table->foreignId('payable_id');
             $table->decimal('amount', $precision = 12, $scale = 2);
+            $table->decimal('due', $precision = 12, $scale = 2);
             $table->datetime('due_at')->nullable();
             $table->timestamp('paid_at')->nullable();  
             $table->timestamps();
