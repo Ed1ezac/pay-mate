@@ -22,7 +22,7 @@ class Payable extends Model
     }
 
     public function createPayable(array $data){
-        dd($data);
+        //dd($data);
         return $this->create([
             'name' => $data['name'],
             'type' => $data['type'],
@@ -31,7 +31,7 @@ class Payable extends Model
             'accrues_every' => $data['accrues'] == 'on' ? $data['accrual_frequency'].' '.$data['accrual_period']: null,
             'accrues_by' => $data['accrues'] == 'on' ? $data['accrues_by']:null,
             'recurs' => $data['recurs'] == 'on'? 1:0,
-            'due_at' => $data[''],
+            //'due_at' => $data['due_at'],
             'recurs_every' => $data['recurs'] == 'on' ? $data['recursion_frequency'].' '.$data['recursion_period']: null,
             'organization_id' => $data['organization_id'],
         ]);

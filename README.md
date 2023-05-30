@@ -16,7 +16,7 @@ This system was made using the Laravel framework, an open source php framework f
 | <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="80"/> </a>| Nodejs v14.16|
 | <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/> </a> | Tailwind CSS v2.0.3 |
 | <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> | PostgreSQL Database |
-| <a href="https://vuejs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg" alt="vuejs" width="40" height="40"/> </a> | Vuejs v3.0.11 |
+| <a href="https://vuejs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg" alt="vuejs" width="40" height="40"/> </a> | Vuejs v3.2.36 |
 
 
 ## Requirements
@@ -33,6 +33,7 @@ This project's architecture follows the Laravel framework architecture and direc
 - Download and unzip the project
 - If you have Visual Studio Code IDE you can use its built-in command processor by clicking `Terminal`->`New Terminal` on the top ribbon menu
 - Otherwise fire up your console app *(e.g command prompt on windows)* and navigate to the project folder 
+- Install the necessary packages by running `composer i` command
 - Install the necessary packages by running `npm i` command
 - Compile the javascript & css by running `npm run dev`
 - In order to create accounts and log in you will need a database. 

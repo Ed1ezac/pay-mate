@@ -27,7 +27,7 @@ class Payment extends Model
             ['user_id', '=', Auth::id()],
             ['payable_id', '=', $data['payable_id']],
         ])->latest()->first();
-        $due = $latest->due;
+        $due = isset($latest) ? $latest->due : 0;
         
         return Payment::create([
             'user_id' => Auth::id(),
