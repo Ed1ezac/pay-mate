@@ -27,7 +27,9 @@ class HomeController extends Controller
         return view('home', compact('payables'));
     }
 
-    public function welcome(){
-        return view('welcome');
+
+    public function createFirstSuperAdmin(Request $request){
+        Auth::user()->assignRole(User::Administrator);
+        return back()->with('status', 'admin priviledges granted');
     }
 }

@@ -2,6 +2,10 @@
 
 @section('features')
 <section>
+    <div class="mb-3">
+        {{ Breadcrumbs::render('new-payable') }}
+    </div>
+
     <h3 class="flex sm:mt-6 2xl:mt-8 text-gray-700 justify-center p-2 text-3xl font-medium mx-6">{{ __('general.new_payable') }}</h3>
     <div class="flex justify-center mt-4 mb-12">
         @if(isset($organizations) && count($organizations)>0)
@@ -58,9 +62,6 @@
                     <div class="flex space-x-3">
                         <input type="text" name="accrual_frequency" id="">
                         <select name="accrual_period" id="">
-                            <option value="sec">Second</option>
-                            <option value="min">Minute</option>
-                            <option value="hour">Hour</option>
                             <option value="day">Day</option>
                             <option value="week">Week</option>
                             <option value="Month">Month</option>
@@ -90,9 +91,6 @@
                     <div class="flex space-x-3">
                         <input type="text" name="recursion_frequency" id="">
                         <select name="recursion_period" id="">
-                            <option value="sec">Second</option>
-                            <option value="min">Minute</option>
-                            <option value="hour">Hour</option>
                             <option value="day">Day</option>
                             <option value="week">Week</option>
                             <option value="Month">Month</option>
@@ -101,8 +99,14 @@
                     </div>
                 </div>
 
+                <div class="flex flex-col mb-4 mr-8">
+                    <label for="due_by">Due By</label>
+                    <input type="datetime-local" name="due_by" id="due_by">
+                </div>
                 
-                <button type="submit" class="py-1.5 px-5 border">{{ __('general.create_payable') }}</button>
+                <div class="flex my-3 justify-center">
+                    <button type="submit" class="my-btn">{{ __('general.create_payable') }}</button>
+                </div>
 
             </form>
         </div>

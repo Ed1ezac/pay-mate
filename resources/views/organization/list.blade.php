@@ -2,11 +2,14 @@
 
 @section('features')
 <section>
+    <div class="mb-3">
+        {{ Breadcrumbs::render('organizations') }}
+    </div>
+
     <div>
     @if (isset($organizations) && count($organizations)>0)
-        <div class="flex justify-between items-center pt-8 mb-8">
-            <h3>Organizations</h3>
-            <a class="px-5 py-1.5 border" href="/new/organization">{{ __('general.create_organization') }}</a>
+        <div class="flex items-center pt-8 mb-8">
+            <a class="my-btn" href="/new/organization">{{ __('general.create_organization') }}</a>
         </div>
 
         <div class="mr-4 xl:mr-6 mt-8 xl:mt-10 mb-8">

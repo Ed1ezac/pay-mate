@@ -2,6 +2,9 @@
 
 @section('features')
 <section>
+    <div class="mb-3">
+        {{ Breadcrumbs::render('home') }}
+    </div>
     <h3 class="text-xl mb-12 text-gray-600">Welcome Back! Select a Fee/Charge to pay for.</h3>
     <!----->
     @if(isset($payables) && count($payables)>0)
@@ -14,7 +17,7 @@
                     <p>{{ $payable->organization->name }}</p>
                     <p>P{{ $payable->principal }}</p>
                     <div class="flex justify-end">
-                        <a class="px-8 py-1.5 border" href="{{'/pay/for/payable/id/'.$payable->id}}">Pay</a>
+                        <a class="my-btn px-12" href="{{'/pay/for/payable/id/'.$payable->id}}">Pay</a>
                     </div>
                    
                 </div>

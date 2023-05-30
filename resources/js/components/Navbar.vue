@@ -1,11 +1,11 @@
 <template>
-    <header class="fixed w-full z-50 bg-white shadow-md">
+    <header class="fixed w-full z-50 bg-blue-800 shadow-md">
         <!---Normal View--->
         <div class="flex justify-between px-4 h-16 2xl:mx-auto max-w-7xl">
             <!--Logo-->
             <div class="flex">
                 <a href="/" class="self-center text-white text-center">
-                    <img class="h-9 w-12 bg-green-500 rounded-full sm:inline-block" alt="logo">
+                    <img :src="logoUri"  class="h-4 sm:inline-block" alt="logo">
                 </a>
             </div>
 
@@ -46,7 +46,7 @@
                     </Menu>
                 </div>
 
-                <button @click="isOpen = !isOpen" type="button" class="text-gray-500 focus:text-gray-500 focus:outline-none" 
+                <button @click="isOpen = !isOpen" type="button" class="text-white focus:text-white focus:outline-none" 
                 aria-controls="mobile-menu" aria-expanded="false">     
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path v-if="isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -58,29 +58,29 @@
             <div class="hidden md:flex md:items-center md:space-x-12">
                 <!--Nav Links-->
                 <div class="hidden md:flex md:ml-12 md:space-x-12">
-                    <a v-if="isAuth" href="/home" v-bind:class="currentUrl == 'home' ? 'text-gray-600':'text-gray-400 hover:text-gray-600'" class="nav-link">
+                    <a v-if="isAuth" href="/home" v-bind:class="currentUrl == 'home' ? 'text-white':'text-blue-300 hover:no-underline hover:text-white border-transparent '" >
                         <div class="-mb-1">
                             <p class="text-sm font-bold">
                                 Home
                             </p>
                         </div>
                     </a>
-                    <a v-if="isAuth" href="/my-payments" v-bind:class="currentUrl == 'edit-profile' ? 'text-gray-600':'text-gray-400 hover:text-gray-600'" class="my-navbar-link">
+                    <a v-if="isAuth" href="/my-payments" v-bind:class="currentUrl == 'my-payments' ? 'text-white':'text-blue-300 hover:no-underline hover:text-white border-transparent '">
                         <div class="text-sm font-bold">
                             My Payments
                         </div>
                     </a>
-                    <a v-if="isAuth && isAdmin" href="/#" v-bind:class="currentUrl == 'membership' ? 'text-gray-600':'text-gray-400 hover:text-gray-600'" class="my-navbar-link">
+                    <a v-if="isAuth && isAdmin" href="#" v-bind:class="currentUrl == 'membership' ? 'text-white':'text-blue-300 hover:no-underline hover:text-white border-transparent '">
                         <div class="text-sm font-bold">
                             Users
                         </div>
                     </a>
-                    <a v-if="isAuth && isAdmin" href="/#" v-bind:class="currentUrl == 'companies' ? 'text-gray-600':'text-gray-400 hover:text-gray-600'" class="my-navbar-link">
+                    <a v-if="isAuth && isAdmin" href="/fees-and-charges" v-bind:class="currentUrl == 'fees-and-charges' ? 'text-white':'text-blue-300 hover:no-underline hover:text-white border-transparent '">
                         <div class="text-sm font-bold">
-                            Payables
+                            Fees &amp; Charges
                         </div>
                     </a>
-                    <a v-if="isAuth && isAdmin" href="/organizations" v-bind:class="currentUrl == 'organizations' ? 'text-gray-600':'text-gray-400 hover:text-gray-600'" class="my-navbar-link">
+                    <a v-if="isAuth && isAdmin" href="/organizations" v-bind:class="currentUrl == 'organizations' ? 'text-white':'text-blue-300 hover:no-underline hover:text-white border-transparent '">
                         <div class="text-sm font-bold">
                             Organizations
                         </div>
@@ -121,19 +121,19 @@
                     </Menu>
                 </div>
 
-                <a v-if="!isAuth && currentUrl != 'login'" href="/login" class="text-gray-700 py-1.5 hover:no-underline border-transparent focus:ring-offset-0 focus:ring-gray-300">Login</a>
-                <a v-if="!isAuth && currentUrl != 'register'" href="/register" class="sm:ml-2 text-gray-700 py-1.5 border-transparent hover:no-underline focus:ring-offset-0 focus:ring-gray-300">Register</a>
+                <a v-if="!isAuth && currentUrl != 'login'" href="/login" class="text-blue-50 py-1.5 hover:no-underline hover:text-white border-transparent focus:ring-offset-0 focus:ring-gray-300">Login</a>
+                <a v-if="!isAuth && currentUrl != 'register'" href="/register" class="sm:ml-2 text-blue-50 py-1.5 border-transparent hover:text-white hover:no-underline focus:ring-offset-0 focus:ring-gray-300">Register</a>
             </div>
         </div>
 
         <!---Mobile View--->
         <div v-if="isOpen" class="block md:hidden overflow-auto space-y-4 px-4 pt-1 pb-4">
             <!---Dropdown Links---->
-            <a v-if="isAuth" href="/home" v-bind:class="currentUrl == 'home'? 'text-gray-700 mobile-nav-link':'mobile-nav-link'">Home</a>
-            <a v-if="isAuth" href="#" class="mobile-nav-link">My Payments</a>
-            <a v-if="isAuth && isAdmin" href="#" class="mobile-nav-link">Users</a>
-            <a v-if="isAuth && isAdmin" href="#" class="mobile-nav-link">Payables</a>
-            <a v-if="isAuth && isAdmin" href="/organizations" class="mobile-nav-link">Organizations</a>
+            <a v-if="isAuth" href="/home" v-bind:class="currentUrl == 'home'? 'bg-blue-400 mobile-nav-link':'mobile-nav-link'">Home</a>
+            <a v-if="isAuth" href="/my-payments" v-bind:class="currentUrl == 'my-payments'? 'bg-blue-400 mobile-nav-link':'mobile-nav-link'">My Payments</a>
+            <a v-if="isAuth && isAdmin" href="#" v-bind:class="currentUrl == 'users'? 'bg-blue-400 mobile-nav-link':'mobile-nav-link'">Users</a>
+            <a v-if="isAuth && isAdmin" href="/fees-and-charges" v-bind:class="currentUrl == 'fees-and-charges'? 'bg-blue-400 mobile-nav-link':'mobile-nav-link'">Fees &amp; Charges</a>
+            <a v-if="isAuth && isAdmin" href="/organizations" v-bind:class="currentUrl == 'organizations'? 'bg-blue-400 mobile-nav-link':'mobile-nav-link'">Organizations</a>
 
             <!----Un-Authenticated----->
             <a v-if="!isAuth && currentUrl != 'login'" href="/login" class="block border border-gray-600 px-2 py-1 hover:no-underline hover:bg-gray-700 hover:text-white focus:ring-offset-0 focus:ring-gray-300">Login</a>
@@ -169,12 +169,12 @@
             isAdmin: {
                 type: Boolean,
                 default: true,
-            }
+            },
             /*currentAdminUrl: {
                 type: String,
                 default: '',
             },*/
-            //logoUri: String,
+            logoUri: String,
         },
         computed: {},
         methods:{

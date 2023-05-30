@@ -1,7 +1,10 @@
 @extends('layouts.dashboard-header')
 
 @section('features')
-<section>
+<section class="pb-8">
+    <div class="mb-3">
+        {{ Breadcrumbs::render('my-payments') }}
+    </div>
     <div>
         @if (isset($payments) && count($payments)>0)
         <div class="mr-4 xl:mr-6 mt-8 xl:mt-10 mb-8">

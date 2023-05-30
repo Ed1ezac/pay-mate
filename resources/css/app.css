@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,500;1,600&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,6 +12,10 @@
     }
 
     .mobile-nav-link{
-        @apply block border border-gray-600 px-2 py-1 text-gray-300 hover:text-gray-700;
+        @apply block border border-blue-400 rounded-md px-2 py-1 text-white hover:bg-blue-400;
+    }
+
+    .my-btn{
+        @apply rounded-md text-base px-4 py-1.5 text-white bg-blue-600 font-semibold shadow-md hover:bg-blue-900;
     }
 }

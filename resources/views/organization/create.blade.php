@@ -2,13 +2,17 @@
 
 @section('features')
 <section>
-    <h3 class="flex sm:mt-2 2xl:mt-8 text-gray-700 justify-center p-2 text-3xl font-medium mx-6">{{ __('general.new_organization') }}</h3>
+    <div class="mb-3">
+        {{ Breadcrumbs::render('create-org') }}
+    </div>
+
+    <h3 class="flex sm:mt-2 2xl:mt-12 text-gray-700 justify-center p-2 text-3xl font-medium mx-6">{{ __('general.new_organization') }}</h3>
     <div class="flex justify-center mt-4 mb-12">
         <div class="bg-white shadow-md overflow-hidden px-6 py-5 w-full max-w-md rounded-md">
             <form action="{{ route('new_org') }}" method="Post">
                 @csrf
                 <div class="mb-3">
-                    <label for="name" class="my-form-label">
+                    <label for="name" class="mb-3">
                     {{ __('general.organization_name') }}
                     </label>
                     <input type="text" name="name" autocomplete="name" required class="w-full 
@@ -19,13 +23,8 @@
                     </span>
                     @enderror
                 </div>
-                <div>
-                    <button type="submit" class="group px-5 py-1.5 relative w-full border">
-                        <span class="absolute left-0 inset-y-0 flex items-center pl-3">
-                            <svg class="h-5 w-5 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
-                            </svg>
-                        </span>
+                <div class="mt-8">
+                    <button type="submit" class="my-btn relative w-full">
                         {{ __('general.create_organization') }}
                     </button>
                 </div>

@@ -22,24 +22,13 @@ class Payment extends Model
     }
 
     public function createPayment(array $data){
-        //find all payments with due > 0
-        $dues = Payment::where([
+        //find latest payment with due > 0
+        $latest = Payment::where([
             ['user_id', '=', Auth::id()],
             ['payable_id', '=', $data['payable_id']],
-            ['due', '>', 0],
-        ])->get();
-        $due = 0;
-        foreach($dues as $d){
-            $due += $d->due;
-        }
-
-        //@dd($due);
-        if($data['amount'] == $due){
-            foreach($dues as $d){
-                $d->update(['due' => 0]);
-            }
-        }
-
+        ])->latest()->first();
+        $due = $latest->due;
+        
         return Payment::create([
             'user_id' => Auth::id(),
             'payable_id' => $data['payable_id'],

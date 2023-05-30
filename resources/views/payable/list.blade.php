@@ -2,11 +2,13 @@
 
 @section('features')
 <section>
+    <div class="mb-3">
+        {{ Breadcrumbs::render('fees') }}
+    </div>
 @if(isset($payables) && count($payables)>0)
     <div>
         <div class="flex justify-between items-center pt-8 mb-8">
-            <h3>Fees and Charges</h3>
-            <a class="px-5 py-1.5 border" href="/new/payable">Create Fee/Charge </a>
+            <a class="my-btn" href="/new/payable">Create Fee/Charge </a>
         </div>
         
         <div class="flex flex-wrap space-x-4">

@@ -81,7 +81,7 @@ export default {
             }
             return isValid;
         },
-        watch:{
+        Watch:{
             cardNumber: function(val){
                 console.log(val);
                 if(cardNumberUtils.validateCardNumber(val)){
@@ -94,7 +94,7 @@ export default {
                 }
             }
         },
-        directives: {
+        Directives: {
             'card-number':{
                 created(el){
                     el.addEventListener('keypress', cardUtils.restrictNumeric);

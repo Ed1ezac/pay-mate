@@ -64,8 +64,8 @@
                 </div>
 
                 <div class="flex justify-center">
-                    <div class="">
-                        <button type="submit" class="py-1.5 px-5 border">
+                    <div class="w-full">
+                        <button type="submit" class="my-btn w-full border">
                             {{ __('auth.register') }}
                         </button>
                     </div>

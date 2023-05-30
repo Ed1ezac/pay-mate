@@ -48,7 +48,7 @@
 
                 <div class="">
                     <div class="flex flex-col space-y-3">
-                        <button type="submit" class="px-5 py-1.5 border">
+                        <button type="submit" class="my-btn px-5 py-1.5  border">
                             {{ __('auth.login') }}
                         </button>
 

@@ -21,6 +21,7 @@ class CreatePayablesTable extends Migration
             $table->decimal('principal', $precision = 12, $scale = 2)->nullable();
             $table->boolean('accrues')->deafault(0);
             $table->string('accrues_every')->nullable();
+            $table->datetime('due_at')->nullable();
             $table->decimal('accrues_by', $precision = 9, $scale = 2)->nullable();
             $table->boolean('recurs')->default(0);
             $table->string('recurs_every')->nullable();
