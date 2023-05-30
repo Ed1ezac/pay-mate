@@ -5,7 +5,7 @@
     <h3 class="flex sm:mt-6 2xl:mt-8 text-gray-700 justify-center p-2 text-3xl font-medium mx-6">{{ __('general.new_payable') }}</h3>
     <div class="flex justify-center mt-4 mb-12">
         @if(isset($organizations) && count($organizations)>0)
-        <div class="bg-white shadow-md overflow-hidden w-full max-w-md rounded-md">
+        <div class="bg-white shadow-md overflow-hidden px-6 py-6 w-full max-w-md rounded-md">
             <form action="{{ route('create_payable') }}" method="Post">
                 @csrf
                 
@@ -47,7 +47,8 @@
                 <div class="mb-4">
                     <label for="accrues">{{ __('general.accrues') }}</label>
                     <div>
-                        <input type="checkbox" name="accrues" id="" required>
+                        <input type="hidden" name="accrues" value="off" id="">
+                        <input type="checkbox" name="accrues" id="">
                         <p class="text-gray-400 text-xs">{{ __('general.accrual_help') }}</p>
                     </div>
                 </div>
@@ -78,6 +79,7 @@
                 <div class="mb-4">
                     <label for="recurs">{{ __('general.recurs') }}</label>
                     <div>
+                        <input type="hidden" name="recurs" value="off" id="">
                         <input type="checkbox" name="recurs" id="">
                         <p class="text-gray-400 text-xs">{{ __('general.recursion_help') }}</p>
                     </div>

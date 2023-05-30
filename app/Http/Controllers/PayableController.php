@@ -22,10 +22,16 @@ class PayableController extends Controller
 
     public function create(Request $request){
         $payable = new Payable();
+        //dd($request->all());
         $payable->createPayable($request->all());
 
         return redirect('/organization/'. $request->get('organization_id') .'/payables')
             ->with('status', 'Payable created successfully');
+    }
+
+    public function list(){
+        $payables = Payable::all();
+        return view('payable.list', compact('payables'));
     }
 
     public function edit(){

@@ -32,11 +32,15 @@ Route::get('/new/organization', [OrganizationController::class, 'creationForm'])
 Route::post('/create/organization', [OrganizationController::class, 'create'])->name('new_org');
 
 //Payables
+Route::get('/fees-and-charges', [PayableController::class, 'list']);
 Route::get('/organization/{id?}/payables', [PayableController::class, 'forOrganization']);
 Route::get('/new/payable/', [PayableController::class, 'creationForm'])->name('new_payable');
 Route::post('/create/payable', [PayableController::class, 'create'])->name('create_payable');
+
 //Payment
+Route::get('/my-payments', [PaymentController::class, 'myPayments']);
 Route::get('/pay/for/payable/id/{id?}', [PaymentController::class, 'newPayment']);
+Route::post('/perform-payment', [PaymentController::class, 'pay'])->name('create_payment');
 /*Route::group(['prefix' =>'admin', 'middleware' =>'auth'], function () {
     Route::get('/companies', [CompanyController::class, 'adminCompaniesList']);
 });*/

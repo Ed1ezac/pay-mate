@@ -6,9 +6,9 @@
     <!----->
     @if(isset($payables) && count($payables)>0)
     <div>
-        <div class="flex flex-wrap space-x-4 space-y-5">
+        <div class="flex flex-wrap space-x-4">
         @foreach ($payables as $payable)
-            <div class="bg-white shadow-sm rounded-md">
+            <div class="bg-white shadow-sm mb-4 rounded-md">
                 <div class="flex flex-col space-y-3 px-16 py-14">
                     <h3 class="text-xl font-semibold">{{ $payable->name }}</h3>
                     <p>{{ $payable->organization->name }}</p>
